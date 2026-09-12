@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/cuentas
+    driverClassName: org.postgresql.Driver
+    username: postgres
+    password: admin
+    initialization-mode: always
+    initialize: true
+
+  hikari:
+    maximum-pool-size: 7  # Limite de conexiones activas
+    minimum-idle: 1        # Minimo de conexiones inactivas
+    idle-timeout: 60000    # Cierra conexiones inactivas despues de 60s
+    max-lifetime: 1800000  # Recicla conexiones cada 30 minutos
+    connection-timeout:
+
+  jpa:
+    hibernate:
+      show-sql: true
+      ddl-auto: create
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin
+
+server:
+  port: 8182
